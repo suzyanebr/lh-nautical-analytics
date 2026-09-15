@@ -41,8 +41,7 @@ Para resolver isso, construí um pipeline completo: um script Python que lê os 
 No dashboard encontram-se as principais métricas de vendas, clientes, estoque e os resultados dos modelos preditivos, com filtros por canal, status do pedido e período.
 </p>
 
-<div align="center">
-</p> <div align="center"> <img src="04_Relatorio/02_img_dashboard.png" alt="Dashboard LH Nautical" width="900" /> 
+<div align="center"> <img src="04_Relatorio/02_img_dashboard.png" alt="Dashboard LH Nautical" width="900" /> 
   
 🔗 [Acesse o dashboard completo:](https://app.powerbi.com/view?r=eyJrIjoiZjhhYzkwYjAtODI1Yi00OTNjLThhN2EtM2M5MjE1MWYzZTA2IiwidCI6ImE2MDk0MDk0LWY1YjEtNDU3Yi1hODE3LTM2ZmNlOTFhYTQ3NSJ9)
 
