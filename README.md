@@ -38,12 +38,14 @@ Para resolver isso, construí um pipeline completo: um script Python que lê os 
 ### 1. Dashboard Interativo
 
 <p align="justify">
-No dashboard encontram-se as principais métricas de vendas, clientes, estoque e os resultados dos modelos preditivos, com filtros por canal, status do pedido e período.
+No dashboard encontram-se as principais métricas de vendas, clientes e estoque, além dos resultados dos modelos preditivos, com filtros por canal de venda e status do pedido. No gráfico de média de vendas por dia da semana, o pior dia (quinta-feira) aparece destacado em roxo.
 </p>
 
-<div align="center"> <img src="04_Relatorio/02_img_dashboard.png" alt="Dashboard LH Nautical" width="900" /> 
-  
-🔗 [Acesse o dashboard completo:](https://app.powerbi.com/view?r=eyJrIjoiZjhhYzkwYjAtODI1Yi00OTNjLThhN2EtM2M5MjE1MWYzZTA2IiwidCI6ImE2MDk0MDk0LWY1YjEtNDU3Yi1hODE3LTM2ZmNlOTFhYTQ3NSJ9)
+<div align="center">
+<img src="04_Relatorio/02_img_dashboard.png" alt="Dashboard LH Nautical" width="900" />
+
+<br><br>
+🔗 [Acesse o dashboard interativo no Power BI](https://app.powerbi.com/view?r=eyJrIjoiZjhhYzkwYjAtODI1Yi00OTNjLThhN2EtM2M5MjE1MWYzZTA2IiwidCI6ImE2MDk0MDk0LWY1YjEtNDU3Yi1hODE3LTM2ZmNlOTFhYTQ3NSJ9)
 
 </div>
 
@@ -70,31 +72,31 @@ Versão em slides do relatório, estruturada para apresentação oral aos três 
 #### 1. Os dados são confiáveis para tomada de decisão?
 
 <p align="justify">
-Sim, com ressalvas conhecidas. A tabela de pedidos não apresenta duplicidade nem inconsistência aritmética. O único campo com valores em branco (vendedor associado) é estrutural, ocorre em 100% dos pedidos de e-commerce, canal que não possui vendedor. A ressalva relevante é que 14,9% dos pedidos são cancelamentos ou rascunhos e precisam ser excluídos de qualquer relatório de faturamento.
+Sim, com ressalvas conhecidas. A tabela de pedidos não apresenta duplicidade nem inconsistência aritmética. O único campo com valores em branco (vendedor associado) é estrutural: ocorre em 100% dos pedidos de e-commerce, canal que não possui vendedor. A ressalva relevante é que 14,9% dos pedidos são cancelamentos ou rascunhos e precisam ser excluídos de qualquer relatório de faturamento.
 </p>
 
 #### 2. Qual o pior dia da semana para vendas na loja física?
 
 <p align="justify">
-Quinta-feira, não domingo como uma análise anterior (mal calculada) apontava. O erro original ignorava dias em que a loja abriu e não vendeu nada, inflando artificialmente a média de domingo. Corrigindo o cálculo com uma dimensão de calendário completa, quinta-feira tem a menor média (R$ 157 mil) e quarta-feira a maior (R$ 173,6 mil) uma diferença de apenas 10%, insuficiente para justificar o fechamento da loja em qualquer dia.
+Quinta-feira, não domingo como uma análise anterior (mal calculada) apontava. O erro original ignorava dias em que a loja abriu e não vendeu nada, inflando artificialmente a média de domingo. Corrigindo o cálculo com uma dimensão de calendário completa, quinta-feira tem a menor média (R$ 157 mil) e quarta-feira a maior (R$ 173,6 mil): uma diferença de apenas 10%, insuficiente para justificar o fechamento da loja em qualquer dia.
 </p>
 
 #### 3. Quem são os clientes mais valiosos e o que eles compram?
 
 <p align="justify">
-Os 10 clientes com maior ticket médio entre os que compram de 13 ou mais categorias distintas formam um grupo homogêneo: todos compram nas 14 categorias disponíveis, com ticket médio entre R$ 39,5 mil e R$ 41,8 mil. A categoria que mais compram é Hélices, com 492 unidades , um candidato natural para campanhas de venda cruzada.
+Os 10 clientes com maior ticket médio entre os que compram de 13 ou mais categorias distintas formam um grupo homogêneo: todos compram nas 14 categorias disponíveis, com ticket médio entre R$ 39,5 mil e R$ 41,8 mil. A categoria que mais compram é Hélices, com 492 unidades, um candidato natural para campanhas de venda cruzada.
 </p>
 
 #### 4. É possível prever a demanda de um produto antes de faltar estoque?
 
 <p align="justify">
-Um modelo baseline de média móvel (3 meses) foi testado no produto Bússola de Bordo 702. O erro médio absoluto foi de 19,44 unidades,  o modelo acompanha bem períodos estáveis, mas erra em mais de 100% em picos súbitos de demanda, como o observado em janeiro/2026. Esse tipo de atraso explica rupturas de estoque como a relatada no cenário da empresa.
+Um modelo baseline de média móvel (3 meses) foi testado no produto Bússola de Bordo 702. O erro médio absoluto foi de 19,44 unidades: o modelo acompanha bem períodos estáveis, mas erra em mais de 100% em picos súbitos de demanda, como o observado em janeiro/2026. Esse tipo de atraso explica rupturas de estoque como a relatada no cenário da empresa.
 </p>
 
 #### 5. É possível recomendar produtos com base no comportamento de compra?
 
 <p align="justify">
-Sim. Um motor de recomendação por similaridade de cosseno, construído a partir de uma matriz de interação cliente-produto, identificou os 5 produtos mais associados ao Motor de Popa 1949 (liderado por Motor de Popa 5331, similaridade de 0,2566). Os índices são baixos e próximos entre si, indicando um comportamento de compra disperso, o motor serve como apoio, não como regra única de recomendação.
+Sim. Um motor de recomendação por similaridade de cosseno, construído a partir de uma matriz de interação cliente-produto, identificou os 5 produtos mais associados ao Motor de Popa 1949 (liderado por Motor de Popa 5331, similaridade de 0,2566). Os índices são baixos e próximos entre si, indicando um comportamento de compra disperso: o motor serve como apoio, não como regra única de recomendação.
 </p>
 
 ## Estrutura do Repositório
@@ -150,4 +152,4 @@ Sim. Um motor de recomendação por similaridade de cosseno, construído a parti
    ```
 
 8. **Abrir o dashboard:**
-   Abra `03_Dashboard/Dashboard.pbix` no Power BI Desktop e atualize a conexão com o seu banco local.
+   Use a [versão publicada na web](https://app.powerbi.com/view?r=eyJrIjoiZjhhYzkwYjAtODI1Yi00OTNjLThhN2EtM2M5MjE1MWYzZTA2IiwidCI6ImE2MDk0MDk0LWY1YjEtNDU3Yi1hODE3LTM2ZmNlOTFhYTQ3NSJ9) ou abra `03_Dashboard/Dashboard.pbix` no Power BI Desktop e atualize a conexão com o seu banco local.
