@@ -1,0 +1,86 @@
+{
+  "name": "LH Nautical - Navy Neon",
+  "dataColors": [
+    "#2589FF",
+    "#8757E8",
+    "#19C6B4",
+    "#F5C451",
+    "#FF6B8A",
+    "#35C9F2",
+    "#A78BFA",
+    "#F59E0B",
+    "#4ADE80",
+    "#F97316"
+  ],
+  "background": "#061426",
+  "foreground": "#EAF2FF",
+  "tableAccent": "#2589FF",
+  "good": "#19C6B4",
+  "neutral": "#F5C451",
+  "bad": "#FF6B8A",
+  "maximum": "#2589FF",
+  "center": "#8757E8",
+  "minimum": "#19C6B4",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Aptos Display",
+      "fontSize": 28,
+      "color": "#F4F8FF"
+    },
+    "title": {
+      "fontFace": "Aptos",
+      "fontSize": 12,
+      "color": "#EAF2FF"
+    },
+    "header": {
+      "fontFace": "Aptos",
+      "fontSize": 11,
+      "color": "#EAF2FF"
+    },
+    "label": {
+      "fontFace": "Aptos",
+      "fontSize": 10,
+      "color": "#C7D7EF"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontFamily": "Aptos",
+            "fontSize": 12,
+            "color": {
+              "solid": {
+                "color": "#EAF2FF"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#081B31"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#123D63"
+              }
+            },
+            "radius": 8
+          }
+        ]
+      }
+    }
+  }
+}
